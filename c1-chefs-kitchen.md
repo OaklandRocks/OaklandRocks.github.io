@@ -19,6 +19,7 @@
 
 * After watching the DBC video I didn't realize that Shareef was such a pitch man.  I didn't expect him to be so charismatic and poetic with the perfect buzz words.  He also has a sweet beard.
 <div style="text-align:center"><img src ="https://github.com/OaklandRocks/OaklandRocks.github.io/blob/master/imgs/shareef.png height="300px" width="300px"/></div>
+![Shareef beard](ttps://github.com/OaklandRocks/OaklandRocks.github.io/blob/master/imgs/shareef.png =250px)
 
 * He is a good at putting himself into the mindset of a student with his two fears.
 
