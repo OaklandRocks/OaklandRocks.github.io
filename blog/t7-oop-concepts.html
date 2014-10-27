@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OO vs. Functional Programming</title>
+</head>
+<body>
+	<div class= "">
+		<ul>OO vs. Functional Programming</ul>
+		<ul>Variable Scope</ul>
+		<ul>Class Methods</ul>
+		<ul>Blocs, Procs, and Lambdas</ul>
+		<ul>Classes vs Modules</ul>
+		<ul>Inheritance vs Composition</ul>
+	</div>
+	<div class="Blocks">
+		<h5>Blocks Procs and Lambdas</h5>
+		<ul>Blocks</ul>
+		<p>Blocks can be combined with methods like .each and .times to execute an instruction for each element in a collection (like a hash or array).</p>
+
+		<ul>Procs</ul>
+		<p>Procs are easy to define! You just call Proc.new and pass in the block you want to save. Here's how we'd create a proc called cube that cubes a number (raises it to the third power):
+
+</p><br>
+<p>We can then pass the proc to a method that would otherwise take a block, and we don't have to rewrite the block over and over!</p><br>
+<p>(The .collect! and .map! methods do the exact same thing.)
+
+The & is used to convert the cube proc into a block (since .collect! and .map! normally take a block). We'll do this any time we pass a proc to a method that expects a block.</p>
+		<ul>Lambdas</ul>
+		<p>Like procs, lambdas are objects. The similarities don't stop there: with the exception of a bit of syntax and a few behavioral quirks, lambdas are identical to procs.</p><br>
+		<p></p>
+		<ul>review</ul>
+		<p>A block is just a bit of code between do..end or {}. It's not an object on its own, but it can be passed to methods like .each or .select.
+A proc is a saved block we can use over and over.
+A lambda is just like a proc, only it cares about the number of arguments it gets and it returns to its calling method rather than returning immediately.
+There are obviously lots of cases in which blocks, procs, and lambdas can do similar work, but the exact circumstances of your program will help you decide which one you want to use.</p>
+	</div>
+</body>
+</html>
