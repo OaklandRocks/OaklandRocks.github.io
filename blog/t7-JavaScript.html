@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css"/>
+	<meta charset="UTF-8">
+	<title>Ruby vs JS</title>
+</head>
+<body>
+	<div class= "ruby">
+		<h1>Ruby vs Javascript</h1>
+		<h2>Ruby Hashes vs. JavaScript Objects</h2>
+		<p>Objects (similar to Ruby’s hash), declared as variables, are a way of organizing key/value pairs. For example, <code>var cat = {color: "grey", name: "Spot", age: "12"};</code> To access the value of an associated key, you can call that on the variable name: cat.name returns "Spot". You can also easily delete a key/value pair by writing delete <code>cat.name.</code> To declare a new key/value pair, write: <code>cat.gender = "male";.</code> This appends this new data point to the end of the Object.</p><br><p>There is a very interesting blog post written by	the flatiron school on the differences of Ruby and JS syntax its  <a href="http://blog.flatironschool.com/post/67666573907/javascript-vs-ruby">here</a> it really goes over how to find index within arrays methods vs functions</p>
+		<h2>Ruby classes vs. JavaScript constructor functions</h2>
+			<li>JS objects don;t have a formal class, an thus there is no special way in defining instance of a class.  IN RUBY its easy to define instance of classes with keyword new.  And it's also easy to define instance variables with the def initialize method within a class.</li>
+			<li>JavaScript instances are created with a constructor. The constructor of an instance is a function that was invoked with the new operator. In JavaScript, any function can be a constructor, even if it doesn’t look like one:
+
+	 <p class= "#"> // => undefined</p><br>
+	square(2) <br>
+	<p class= "#"> // => 4 </p>
+	square(2).constructor <br>
+	  <p class= "#">//=> [Function: Number]</p><br>
+	new square(2) <br>
+	  <p class= "#">//=> {} </p><br>
+	new square(2).constructor <br>
+	 <p class= "#"> //=> [Function: square]</p></code> <br>
+			<p>Javascript objects are composite data structures comprised of properties</p><code>var obj = {};<br>
+	obj.name = "Adam"</code> <br><p><b>is the same as</b></p><br><code>var obj = {<br>
+	  name: "Adam"<br>};
+	  <br><p><b>which is the same as</b></p> <code>var obj = {};<br>
+	obj["name"] = "Adam";<br></code>
+	};</code>
+	<ul>
+			every function in JS is potentially a constructor and can be an instance of the function. WHAT??... <br> How does JS define behaviour of instances?
+			<li>JavaScript doesn’t have a special syntax or special kind of object for that, it has “prototypes.” Prototypes are objects, but unlike a classical system, there are no special methods or properties associated with a prototype. Any object can be a prototype, even an empty object. In fact, that’s exactly what is associated with a constructor by default</li>
+			<h2>Lets compare Ruby Classes vs JS Prototypes</h2>
+			<img id= "rubyque" src="./images/que_ruby.png" alt="Ruby Que">
+		</ul>
+		<li>You can see the instance variables and if you wanted to get an instance of the class que you would simply use the new method on it, but in JS it is slightly different <p>first we need to look at the prototype of the que</p></li>
+		<img id="jsque" src="./images/que_js.png" alt="JS Que">
+		<li>Here we can see that using the keyword <code>this.array</code>and<code>this.head</code>shows that in JS any object can be a prototype</li><li>“Classes” are objects in most “classical” languages, but they are a special kind of object. In JavaScript, prototypes are not a special kind of object, they’re just objects.</li>
+		<br><i>source </i><blockquote>http://raganwald.com/2013/02/10/prototypes.html</blockquote>
+
+		<h2>Ruby documentation vs. JavaScript documentation</h2>
+		<p>the difference in the ruby documenation vs JS documentation is very broad, we rely heavly on the Ruby docs as the "bible" on all things ruby as for JS we rely on the Mozzilla Developers network</p>
+
+		<h2>Looping in Ruby vs. Looping in JavaScript</h2>
+		<p>in JS you would loop through doing this <code>var languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"];
+		for (i=0;i<languages.length; i++){
+		console.log(languages[i]);
+		}</code></p>
+		<p>in Ruby you would do pretty much the same thing but you would do +=1 instead of i ++</p>
+		<ul>JS uses the each for each loop, for in, for, and for of</ul>
+		<ul>Ruby uses an each loop</ul>
+		
+	</div>
+	
+	<div class="#">
+		<ul>sources
+			<li><a href="http://www.codecademy.com/forum_questions/5093e0a0cdbd510200000548">CodeAcademy</a>http://www.codecademy.com/forum_questions/5093e0a0cdbd510200000548</li>
+			<li><a href="http://blog.flatironschool.com/post/67666573907/javascript-vs-ruby">JAVASCRIPT VS. RUBY</a></li>
+			<li><a href="http://raganwald.com/2014/01/19/prototypes-are-not-classes.html">Prototypes Are Not Classes
+			</a></li>
+			<li><a href="https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/prototype.md"></a>How Prototypes and Constructors differ from Classes</li>
+			<li><a href="http://www.launchacademy.com/codecabulary/learn-javascript/prototype">Launch Academy</a></li>
+		</ul>
+	</div>
+	
+</body>
+</html>
