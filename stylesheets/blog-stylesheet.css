@@ -51,6 +51,19 @@ article {
 	text-decoration: none;
 	
 }
+#blog_menu {
+    float: left;
+    width: 210px;
+    height: 800px;
+    margin: 10px 10px 10px 0px;
+    background-color: #83C2C0;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+}
+
+#blog_menu h3 {font-weight: extra-bold;}
+#blog_menu h4 {font-weight: bold;}
+
 
 th {
 	font-size: 40px;
