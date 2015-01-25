@@ -7,33 +7,39 @@
 </head>
 <body>
 	<div class = "ruby">
-		<h3>An overview of quick sort and bubble sort</h3>
+		<h3>An overview of merge sort quick sort and bubble sort</h3>
+		<h5>Merge sort</h5>
+		<p>Merge sort is a divide and conquor sorting algorithim that takes half of the array and sorts it, and takes the other half and sorts that.  After its done sortng both sides it merges it together.  SO if we were to pseudocode it would look somthing like this</p>
+		<code>
+			<ul>If array has 1 element</ul>
+			<ul>return Array # it's all ready sorted</ul>
+			<ul>else</ul>
+			<ul>split array into Left Half and Right Half</ul>
+			<ul>SortedLeftHalf = MergeSort(LeftHalf)</ul>
+			<ul>SortedRightHalf = MergeSort(RightHalf)</ul>
+			<ul>Sorted Array = Merge(SortedLeftHalf, SortedRightHalf</ul>
+			<ul>return SortedArray</ul>
+		</code>
+		<p>We need to come up with a function/method to merge the array</p>
+		<code>
+			<ul>Create method Merge(firstArray, secondArray)</ul>
+			<ul>set OutputArray to empty</ul>
+			<ul>While neither the firstArray nor secondArray are empty</ul>
+			<ul>compare the starting elements of firstArray and secondArray</ul>
+			<ul>take the smaller one off and add it to the end of the OutputArray</ul>
+			<ul>unless both firstArray and SecondArray are empty</ul>
+			<ul>let remainder be the non-empty one</ul>
+			<ul>add remainder to the end of the OutputArray</ul>
+			<ul>return OutputArray</ul>
+		</code>
+		<p>So we run a loop on the firstArray and conitue untill it's empty then dump the sorted contents to the OutputArray</p>
+
+
 		<p>
 			<p>Quick sort.</p>
 			<p>Quick sort is a  O(n log n) algorithm. So what does that mean?
 				Baiscally all you really need to know is that it is a divide and conquer algorithm.  It first divides a large arry into smaller sub-arrys.  Then it <i>recursivly sorts the sub-arrays.</i> from the wiki page here is the pseudocode for quicksort</p>
 			<ul>
-				<code>quicksort(A, lo, hi):
-				    <ul>if lo < hi:</ul>
-				    <ul>p := partition(A, lo, hi)</ul>
-				    <ul>quicksort(A, lo, p - 1)</ul>
-				    <ul>quicksort(A, p + 1, hi)</ul>
-				    <ul>// lo is the index of the leftmost element of the subarray
-					// hi is the index of the rightmost element of the subarray (inclusive)</ul>
-					 <ul>partition(A, lo, hi)</ul>
-					 <ul>pivotIndex := choosePivot(A, lo, hi)</ul>
-					 <ul>pivotValue := A[pivotIndex]</ul>
-					 <ul>// put the chosen pivot at A[hi]</ul>
-					 <ul>swap A[pivotIndex] and A[hi]</ul>
-					 <ul>storeIndex := lo</ul>
-					 <ul>// Compare remaining array elements against pivotValue = A[hi]</ul>
-					 <ul>for i from lo to hi−1, inclusive</ul>
-					     <ul>      if A[i] < pivotValue</ul>
-					         <ul>swap A[i] and A[storeIndex]</ul>
-					         <ul>storeIndex := storeIndex + 1</ul>
-					 <ul>swap A[storeIndex] and A[hi]  // Move pivot to its final place</ul>
-					 <ul>return storeIndex</ul>
-				</code>
 			</ul>
 			<p>To better understand this we should look at it in Ruby code</p>
 			<ul>
@@ -44,24 +50,24 @@
 			        <ul>to = array.count - 1</ul>
 				    <ul>end</ul>
 				    <ul>if from >= to</ul>
-				        <ul># Done sorting</ul>
-				        <ul>return array</ul>
+			        <ul># Done sorting</ul>
+			        <ul>return array</ul>
 				    <ul>end</ul>
 
-    <ul># Take a pivot value, at the far left</ul>
-    <ul>pivot = array[from]</ul>
+				    <ul># Take a pivot value, at the far left</ul>
+				    <ul>pivot = array[from]</ul>
 
-    <ul># Min and Max pointers</ul>
-    <ul>min = from</ul>
-    <ul>max = to</ul>
+				    <ul># Min and Max pointers</ul>
+				    <ul>min = from</ul>
+				    <ul>max = to</ul>
 
-    <ul># Current free slot</ul>
-    <ul>free = min</ul>
+				    <ul># Current free slot</ul>
+				    <ul>free = min</ul>
 
     <ul>while min < max</ul>
         <ul>if free == min # Evaluate array[max]</ul>
-            <ul>if array[max] <= pivot # Smaller than pivot, must move</ul>
-               <ul> array[free] = array[max]</ul>
+        <ul>if array[max] <= pivot # Smaller than pivot, must move</ul>
+        <ul> array[free] = array[max]</ul>
                 <ul>min += 1</ul>
                 <ul>free = max</ul>
             <ul>else</ul>
@@ -106,6 +112,60 @@
     <ul>}</ul>
   <ul>}</ul>
 <ul>}</ul>
+<p>and In Ruby</p>
+<tbody><tr>
+        
+        <td><span>def</span> <span>bubble_sort</span>(<span>list</span>)</td>
+      </tr>
+      <tr>
+        
+        <br><td><span>return</span> list <span>if</span> list.size <span>&lt;=</span> <span >1</span> <span># already sorted</span></td>
+      </tr>
+      <tr>
+        <br><td>swapped <span>=</span> <span>true</span></td>
+      </tr>
+      <tr>
+        
+        <br><td><span>while</span> swapped <span>do</span></td>
+      </tr>
+      <tr>
+        
+        <br><td>swapped <span>=</span> <span>false</span></td>
+      </tr>
+      <tr>
+        
+        <br><td><span>0</span>.upto(list.size<span>-</span><span>2</span>) <span>do </span>|<span>i</span>|</td>
+      </tr>
+      <tr>
+        <br><td><span>if</span> list[i] <span>&gt;</span> list[i<span>+</span><span>1</span>]</td>
+      </tr>
+      <tr>
+        <td</td>
+        <br><td>list[i], list[i]<span>+</span><span>1</span>]<span>=</span>list[i]<span>+</span><span>1</span>], list[i] <span># swap values</span></td>
+      </tr>
+      <tr>
+        <br><td id>swapped <span></span> <span>true</span></td>
+      </tr>
+      <tr>
+        <br><td<span>end</span></td>
+      </tr>
+      <tr>
+       <br> <td<span>end</span></td>
+      </tr>
+      <tr>
+        <br><td><span>end</span></td>
+      </tr>
+     </td>
+
+      <tr>
+        
+        <br><td>list</td>
+      </tr>
+      <tr>
+        <td></td>
+       <br> <td<span>end</span></td>
+      </tr>
+</tbody>
 
 	</div>
 </body>
